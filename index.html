@@ -1,55 +1,86 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-      html * {
-        line-height: 1.625;
-        color: #2020131;
-        font-family: Helvetica, sans-serif;
-      
-.greeting h2 {
-  font-weight: lighter;
-    text-align: center;
-  margin-bottom: 0;
-}
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Scientist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background: #333;
+            color: white;
+        }
     </style>
-  </head>
-
+</head>
 <body>
-  <script src="script.js"></script>
-   <h1>shayanedalatmanesh.github.io</h1>
-  <hr>
-   <p> Hey there 👋 welcome to my Github page! 
-     <br>
-     <h2> About me </h2>
-   <br> I'm Shayan Edalatmanesh, a theoretical physicist and an Open-source enthusiast / contributor. I mainly use Python for scientific purposes &#128013;
-     <br>
-    <br> I'm currently working at <a href="https://nanosurf.fzu.cz/">Nanosurf lab</a> in Prague, Czech Republic. I'm interested in studying the electronic structure and properties of different nanomaterials, using density functional theory and other theoretical modeling tools.
-     <br>
-     <br> To help interpret the experimental data, I perform simulations of scanning probe microscopy (AFM, STM and KPFM) on nanostructures. There I use the Probe-Particle package, where I'm also a (co-)developer (PPSTM). 
- <br>
-        <h2> Some useful links: </h2>
-     <br> My <a href="https://scholar.google.com/citations?user=L2PFHwsAAAAJ&hl=en&oi=ao">Google scholar </a> account
-     <br> My <a href="https://twitter.com/shyn_eddie">Twitter </a> account
-     <br>
-     <h2> Reach out 😎 </h2>
-     <br> Send me an <a href="mailto: edalatmanesh@fzu.cz">email </a> 
-     <br> Cheers!
-   </p> 
-</body>
-</html>
-<!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
-</body>
+    
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
+    <div class="container">
+        <header>
+            <h1>Dr. Your Name</h1>
+            <p>Scientist | Researcher | Innovator</p>
+        </header>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm Shayan Edalatmanesh, a theoretical physicist and an Open-source enthusiast/contributor. </p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>I mainly use Python for scientific purposes.</p>
+        </section>
+<!--
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>List of your key papers, articles, and conference proceedings.</p>
+        </section>
+  -->
+      
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: shayan.edalatmanesh@ehu.eus</p>
+            <p>Socials: <a href="#">LinkedIn</a>, <a href="https://scholar.google.com/citations?user=L2PFHwsAAAAJ&hl=en&oi=ao">Google Scholar</a>, <a href="#">ResearchGate</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dr. Your Name | yourwebsite.com</p>
+    </footer>
+
+</body>
 </html>
