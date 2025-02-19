@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
@@ -19,6 +21,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
         }
         nav {
             background: #333;
@@ -37,6 +40,24 @@
             margin-top: 20px;
             background: #333;
             color: white;
+        }
+         .dark-mode {
+            background-color: #121212;
+            color: #f4f4f4;
+        }
+        .dark-mode .container {
+            background: #1e1e1e;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -81,6 +102,11 @@
     <footer>
         <p>&copy; 2024 Dr. Shayan Edalatmanesh | Github.com</p>
     </footer>
-
+<script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+    
 </body>
 </html>
