@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects · Shayan Edalatmanesh</title>
+    <meta name="description" content="Selected projects by Shayan Edalatmanesh: machine learning, data analysis and scientific simulation.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b5f8a'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='white' font-family='sans-serif'%3ESE%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/site.js"></script>
+</head>
+<body>
+
+    <header class="top">
+        <div class="wrap">
+            <a class="brand" href="index.html">Shayan Edalatmanesh</a>
+            <nav aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="talks.html">Talks</a>
+                <a href="projects.html" aria-current="page">Projects</a>
+                <a href="cv.html">CV</a>
+                <button class="theme-btn" id="theme-btn" type="button" aria-label="Toggle dark mode">Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <div class="page-head">
+            <h1>Projects</h1>
+            <p>Selected work beyond the papers: data and machine-learning projects, and simulations behind my research. Each one links to the code or a rendered notebook.</p>
+        </div>
+
+        <!--
+            HOW TO ADD A PROJECT
+            Copy one <article class="project"> block and edit it. Delete the <figure> if there is no image.
+            Images go in assets/projects/. Rendered notebooks go in projects/<name>/index.html (see README).
+        -->
+
+        <section id="ml">
+            <h2 class="label">Machine learning &amp; data</h2>
+
+            <article class="project">
+                <div>
+                    <h3>League of Legends match-outcome predictor</h3>
+                    <p class="tagline">Logistic regression in PyTorch on 2025 ranked-match data, with a full train / tune / evaluate workflow.</p>
+                    <dl class="facts">
+                        <dt>Question</dt><dd>Can a player&rsquo;s win or loss be classified from end-of-match statistics?</dd>
+                        <!-- (kills, deaths, assists, gold earned, damage dealt, wards placed and killed, vision score and Baron kills) -->
+                        <dt>Data</dt><dd>The <a href="https://www.kaggle.com/datasets/jakubkrasuski/league-of-legends-match-dataset-2025/">League of Legends Match Dataset 2025</a> (Kaggle, CC BY 4.0): 40,410 player records, divided almost evenly between wins and losses. Split 80/20 for training and testing. Features were standardized using the training set only.</dd>
+                        <dt>Approach</dt><dd>Logistic regression written as a PyTorch module (BCE loss, SGD, 1,000 full-batch epochs). Compared plain training with L2 regularisation and a learning-rate sweep, evaluated with a confusion matrix, classification report and ROC curve, and inspected the learned weights.</dd>
+                        <dt>Result</dt><dd>About 75% test accuracy (75.0% plain, 74% with L2), and a ROC AUC of 0.82. The weights are interpretable: deaths is the strongest negative factor, assists and kills the strongest positive ones.</dd>
+                    </dl>
+                    <ul class="tags">
+                        <li>Python</li><li>PyTorch</li><li>scikit-learn</li><li>pandas</li><li>Matplotlib</li>
+                    </ul>
+                    <ul class="links">
+                        <li><a href="projects/lol/index.html">View notebook</a></li>
+                        <li><a href="projects/lol/lolMatchPredictor.ipynb" download>Download .ipynb</a></li>
+                    </ul>
+                </div>
+                <figure>
+                    <a href="projects/lol/sum.pdf"><img src="projects/lol/sum.pdf" alt="ROC curve of the classifier rising well above the diagonal, with an area under the curve of 0.82" onerror="this.closest('figure').remove()"></a>
+                    <figcaption>Summary of the findings (test dataset size is 8085 cases): feature analysis, confusion matrix and ROC with AUC = 0.82.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="simulation">
+            <h2 class="label">Simulation &amp; physics</h2>
+
+            <article class="project">
+                <div>
+                    <h3>PPSTM: STM and AFM image simulation</h3>
+                    <p class="tagline">Open-source package I co-authored and maintain.</p>
+                    <dl class="facts">
+                        <dt>What</dt><dd>Simulates scanning-tunnelling microscopy images from first-principles electronic-structure data, so calculations can be compared directly with experiment.</dd>
+                    </dl>
+                    <ul class="tags">
+                        <li>Python</li><li>DFT</li><li>Scientific software</li>
+                    </ul>
+                    <ul class="links">
+                        <li><a href="https://doi.org/10.5281/zenodo.19706972">Zenodo (DOI)</a></li>
+                    </ul>
+                </div>
+                <figure>
+                    <a href="projects/ppstm/ppstmGnrs.pdf"> 
+                    <img src="projects/ppstm/ppstmGnrs.pdf" alt="Simulated STM image" onerror="this.closest('figure').remove()"></a>
+                    <figcaption>Example simulated STM image (second row, middle panel) of a graphene nanoribbon.</figcaption>
+                </figure>
+            </article>
+
+            <article class="project">
+                <div>
+                    <h3>Non-Hermitian SSH chain</h3>
+                    <p class="tagline">Exploring the topological properties of a one-dimensional chain, partially connected to a surface.</p>
+                    <dl class="facts">
+                        <dt>What</dt><dd>The SSH model is the go-to model for understanding one-dimensional topological systems.</dd>
+                        <dt>Question</dt><dd>How does substrate coupling changes the spectrum and edge states of the SSH model?</dd>
+                        <dt>Result</dt><dd>It enables controlled manipulation of zero-energy boundary modes, revealing their evolution and enhancement in relation to exceptional points through tunable coupling and selective site decoupling.</dd>
+                    </dl>
+                    <ul class="tags">
+                        <li>Python</li><li>NumPy</li><li>Matplotlib</li>
+                    </ul>
+                    <ul class="links">
+                        <li><a href="https://journals.aps.org/prb/accepted/10.1103/xjy9-6ysw">Article</a></li>
+                        <li><a href="https://github.com/shayanEdalatmanesh/nonHermitSSH/tree/main">Data</a></li>
+
+                    <!--    <li><a href="projects/non-hermitian/index.html">View notebook</a></li> -->
+                    </ul>
+                </div>
+                <figure>
+                    <img src="projects/nh/fig3L.pdf" alt="Spectrum of the non-Hermitian SSH chain" onerror="this.closest('figure').remove()">
+                    <figcaption>(a,b) Schematics of the SSH chain with one decoupled site. (c,d) The evolution of the exceptional points in the energy spectrum.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">&copy; 2026 Shayan Edalatmanesh</div>
+    </footer>
+
+</body>
+</html>
