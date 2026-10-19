@@ -347,3 +347,6 @@ footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--m
     .contact dl { grid-template-columns: 1fr; gap: 0; }
     .contact dd { margin-bottom: 10px; }
 }
+
+.project { scroll-margin-top: 80px; }
+.project:target h3 { text-decoration: underline; text-underline-offset: 4px; }
